@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency</title>
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h2>Currency news</h2>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            &nbsp;&nbsp;Currency rates for <b><span id="date"> </span> </b>
+
+
+        </div>
+        <div class="panel-body">
+            <div class="panel-heading">
+                <form class=" pull-right">
+                    <div class="form-group">
+                        <label for="date" class="text-primary"> Search date :</label>
+
+                        <input id="search" type="date" class="form-control">
+                    </div>
+                </form>
+                <h3 class="text-primary"> Euro exchange rates</h3>
+
+            </div>
+            <table class="table table-bordered table-hover">
+                <thead class="bg-primary">
+                <th>Currency</th>
+                <th> Rate</th>
+                </thead>
+                <tbody id="content">
+                </tbody>
+
+
+            </table>
+        </div>
+
+
+    </div>
+
+
+</div> <!-- end row-->
+<script type="text/javascript" src="asset/jquery.min.js"></script>
+<script type="text/javascript" src="asset/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        getData();
+
+        $("#search").on("change", function () {
+            getData('/' + this.value);
+
+        })
+
+        function getData(date='') {
+
+            $.ajax({
+                url: "http://api.fixer.io/latest" + date,
+                method: "get",
+                dataType: "json",
+                success: function (res) {
+                    $("#date").text(res.date);
+                    var html = "";
+                    $.each(res.rates, function (key, val) {
+                        html += "<tr> <td>" + key + "</td><td>" + val + "</td></tr>";
+
+                    });
+                    $("#content").html(html);
+
+                },
+                error: function (e, a) {
+
+
+                },
+            });
+        }
+
+
+    })
+</script>
+
+</body>
+</html>

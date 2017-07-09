@@ -1,0 +1,313 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4deb1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Jun 20, 2017 at 06:25 PM
+-- Server version: 5.7.18-0ubuntu0.16.10.1
+-- PHP Version: 7.0.18-0ubuntu0.16.10.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `WS`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `countries`
+--
+
+CREATE TABLE `countries` (
+  `id` int(5) NOT NULL,
+  `countryName` varchar(45) NOT NULL DEFAULT '',
+  `population` varchar(20) DEFAULT NULL,
+  `capital` varchar(30) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`id`, `countryName`, `population`, `capital`) VALUES
+(1, 'Andorra', '84000', 'Andorra la Vella'),
+(2, 'United Arab Emirates', '4975593', 'Abu Dhabi'),
+(3, 'Afghanistan', '29121286', 'Kabul'),
+(4, 'Antigua and Barbuda', '86754', 'St. John\'s'),
+(5, 'Anguilla', '13254', 'The Valley'),
+(6, 'Albania', '2986952', 'Tirana'),
+(7, 'Armenia', '2968000', 'Yerevan'),
+(8, 'Angola', '13068161', 'Luanda'),
+(9, 'Antarctica', '0', ''),
+(10, 'Argentina', '41343201', 'Buenos Aires'),
+(11, 'American Samoa', '57881', 'Pago Pago'),
+(12, 'Austria', '8205000', 'Vienna'),
+(13, 'Australia', '21515754', 'Canberra'),
+(14, 'Aruba', '71566', 'Oranjestad'),
+(15, 'Åland', '26711', 'Mariehamn'),
+(16, 'Azerbaijan', '8303512', 'Baku'),
+(17, 'Bosnia and Herzegovina', '4590000', 'Sarajevo'),
+(18, 'Barbados', '285653', 'Bridgetown'),
+(19, 'Bangladesh', '156118464', 'Dhaka'),
+(20, 'Belgium', '10403000', 'Brussels'),
+(21, 'Burkina Faso', '16241811', 'Ouagadougou'),
+(22, 'Bulgaria', '7148785', 'Sofia'),
+(23, 'Bahrain', '738004', 'Manama'),
+(24, 'Burundi', '9863117', 'Bujumbura'),
+(25, 'Benin', '9056010', 'Porto-Novo'),
+(26, 'Saint Barthélemy', '8450', 'Gustavia'),
+(27, 'Bermuda', '65365', 'Hamilton'),
+(28, 'Brunei', '395027', 'Bandar Seri Begawan'),
+(29, 'Bolivia', '9947418', 'Sucre'),
+(30, 'Bonaire', '18012', 'Kralendijk'),
+(31, 'Brazil', '201103330', 'Brasília'),
+(32, 'Bahamas', '301790', 'Nassau'),
+(33, 'Bhutan', '699847', 'Thimphu'),
+(34, 'Bouvet Island', '0', ''),
+(35, 'Botswana', '2029307', 'Gaborone'),
+(36, 'Belarus', '9685000', 'Minsk'),
+(37, 'Belize', '314522', 'Belmopan'),
+(38, 'Canada', '33679000', 'Ottawa'),
+(39, 'Cocos [Keeling] Islands', '628', 'West Island'),
+(40, 'Democratic Republic of the Congo', '70916439', 'Kinshasa'),
+(41, 'Central African Republic', '4844927', 'Bangui'),
+(42, 'Republic of the Congo', '3039126', 'Brazzaville'),
+(43, 'Switzerland', '7581000', 'Bern'),
+(44, 'Ivory Coast', '21058798', 'Yamoussoukro'),
+(45, 'Cook Islands', '21388', 'Avarua'),
+(46, 'Chile', '16746491', 'Santiago'),
+(47, 'Cameroon', '19294149', 'Yaoundé'),
+(48, 'China', '1330044000', 'Beijing'),
+(49, 'Colombia', '47790000', 'Bogotá'),
+(50, 'Costa Rica', '4516220', 'San José'),
+(51, 'Cuba', '11423000', 'Havana'),
+(52, 'Cape Verde', '508659', 'Praia'),
+(53, 'Curacao', '141766', 'Willemstad'),
+(54, 'Christmas Island', '1500', 'Flying Fish Cove'),
+(55, 'Cyprus', '1102677', 'Nicosia'),
+(56, 'Czechia', '10476000', 'Prague'),
+(57, 'Germany', '81802257', 'Berlin'),
+(58, 'Djibouti', '740528', 'Djibouti'),
+(59, 'Denmark', '5484000', 'Copenhagen'),
+(60, 'Dominica', '72813', 'Roseau'),
+(61, 'Dominican Republic', '9823821', 'Santo Domingo'),
+(62, 'Algeria', '34586184', 'Algiers'),
+(63, 'Ecuador', '14790608', 'Quito'),
+(64, 'Estonia', '1291170', 'Tallinn'),
+(65, 'Egypt', '80471869', 'Cairo'),
+(66, 'Western Sahara', '273008', 'Laâyoune / El Aaiún'),
+(67, 'Eritrea', '5792984', 'Asmara'),
+(68, 'Spain', '46505963', 'Madrid'),
+(69, 'Ethiopia', '88013491', 'Addis Ababa'),
+(70, 'Finland', '5244000', 'Helsinki'),
+(71, 'Fiji', '875983', 'Suva'),
+(72, 'Falkland Islands', '2638', 'Stanley'),
+(73, 'Micronesia', '107708', 'Palikir'),
+(74, 'Faroe Islands', '48228', 'Tórshavn'),
+(75, 'France', '64768389', 'Paris'),
+(76, 'Gabon', '1545255', 'Libreville'),
+(77, 'United Kingdom', '62348447', 'London'),
+(78, 'Grenada', '107818', 'St. George\'s'),
+(79, 'Georgia', '4630000', 'Tbilisi'),
+(80, 'French Guiana', '195506', 'Cayenne'),
+(81, 'Guernsey', '65228', 'St Peter Port'),
+(82, 'Ghana', '24339838', 'Accra'),
+(83, 'Gibraltar', '27884', 'Gibraltar'),
+(84, 'Greenland', '56375', 'Nuuk'),
+(85, 'Gambia', '1593256', 'Bathurst'),
+(86, 'Guinea', '10324025', 'Conakry'),
+(87, 'Guadeloupe', '443000', 'Basse-Terre'),
+(88, 'Equatorial Guinea', '1014999', 'Malabo'),
+(89, 'Greece', '11000000', 'Athens'),
+(90, 'South Georgia and the South Sandwich Islands', '30', 'Grytviken'),
+(91, 'Guatemala', '13550440', 'Guatemala City'),
+(92, 'Guam', '159358', 'Hagåtña'),
+(93, 'Guinea-Bissau', '1565126', 'Bissau'),
+(94, 'Guyana', '748486', 'Georgetown'),
+(95, 'Hong Kong', '6898686', 'Hong Kong'),
+(96, 'Heard Island and McDonald Islands', '0', ''),
+(97, 'Honduras', '7989415', 'Tegucigalpa'),
+(98, 'Croatia', '4284889', 'Zagreb'),
+(99, 'Haiti', '9648924', 'Port-au-Prince'),
+(100, 'Hungary', '9982000', 'Budapest'),
+(101, 'Indonesia', '242968342', 'Jakarta'),
+(102, 'Ireland', '4622917', 'Dublin'),
+(103, 'Israel', '7353985', ''),
+(104, 'Isle of Man', '75049', 'Douglas'),
+(105, 'India', '1173108018', 'New Delhi'),
+(106, 'British Indian Ocean Territory', '4000', ''),
+(107, 'Iraq', '29671605', 'Baghdad'),
+(108, 'Iran', '76923300', 'Tehran'),
+(109, 'Iceland', '308910', 'Reykjavik'),
+(110, 'Italy', '60340328', 'Rome'),
+(111, 'Jersey', '90812', 'Saint Helier'),
+(112, 'Jamaica', '2847232', 'Kingston'),
+(113, 'Jordan', '6407085', 'Amman'),
+(114, 'Japan', '127288000', 'Tokyo'),
+(115, 'Kenya', '40046566', 'Nairobi'),
+(116, 'Kyrgyzstan', '5776500', 'Bishkek'),
+(117, 'Cambodia', '14453680', 'Phnom Penh'),
+(118, 'Kiribati', '92533', 'Tarawa'),
+(119, 'Comoros', '773407', 'Moroni'),
+(120, 'Saint Kitts and Nevis', '51134', 'Basseterre'),
+(121, 'North Korea', '22912177', 'Pyongyang'),
+(122, 'South Korea', '48422644', 'Seoul'),
+(123, 'Kuwait', '2789132', 'Kuwait City'),
+(124, 'Cayman Islands', '44270', 'George Town'),
+(125, 'Kazakhstan', '15340000', 'Astana'),
+(126, 'Laos', '6368162', 'Vientiane'),
+(127, 'Lebanon', '4125247', 'Beirut'),
+(128, 'Saint Lucia', '160922', 'Castries'),
+(129, 'Liechtenstein', '35000', 'Vaduz'),
+(130, 'Sri Lanka', '21513990', 'Colombo'),
+(131, 'Liberia', '3685076', 'Monrovia'),
+(132, 'Lesotho', '1919552', 'Maseru'),
+(133, 'Lithuania', '2944459', 'Vilnius'),
+(134, 'Luxembourg', '497538', 'Luxembourg'),
+(135, 'Latvia', '2217969', 'Riga'),
+(136, 'Libya', '6461454', 'Tripoli'),
+(137, 'Morocco', '33848242', 'Rabat'),
+(138, 'Monaco', '32965', 'Monaco'),
+(139, 'Moldova', '4324000', 'Chişinău'),
+(140, 'Montenegro', '666730', 'Podgorica'),
+(141, 'Saint Martin', '35925', 'Marigot'),
+(142, 'Madagascar', '21281844', 'Antananarivo'),
+(143, 'Marshall Islands', '65859', 'Majuro'),
+(144, 'Macedonia', '2062294', 'Skopje'),
+(145, 'Mali', '13796354', 'Bamako'),
+(146, 'Myanmar [Burma]', '53414374', 'Naypyitaw'),
+(147, 'Mongolia', '3086918', 'Ulan Bator'),
+(148, 'Macao', '449198', 'Macao'),
+(149, 'Northern Mariana Islands', '53883', 'Saipan'),
+(150, 'Martinique', '432900', 'Fort-de-France'),
+(151, 'Mauritania', '3205060', 'Nouakchott'),
+(152, 'Montserrat', '9341', 'Plymouth'),
+(153, 'Malta', '403000', 'Valletta'),
+(154, 'Mauritius', '1294104', 'Port Louis'),
+(155, 'Maldives', '395650', 'Malé'),
+(156, 'Malawi', '15447500', 'Lilongwe'),
+(157, 'Mexico', '112468855', 'Mexico City'),
+(158, 'Malaysia', '28274729', 'Kuala Lumpur'),
+(159, 'Mozambique', '22061451', 'Maputo'),
+(160, 'Namibia', '2128471', 'Windhoek'),
+(161, 'New Caledonia', '216494', 'Noumea'),
+(162, 'Niger', '15878271', 'Niamey'),
+(163, 'Norfolk Island', '1828', 'Kingston'),
+(164, 'Nigeria', '154000000', 'Abuja'),
+(165, 'Nicaragua', '5995928', 'Managua'),
+(166, 'Netherlands', '16645000', 'Amsterdam'),
+(167, 'Norway', '5009150', 'Oslo'),
+(168, 'Nepal', '28951852', 'Kathmandu'),
+(169, 'Nauru', '10065', 'Yaren'),
+(170, 'Niue', '2166', 'Alofi'),
+(171, 'New Zealand', '4252277', 'Wellington'),
+(172, 'Oman', '2967717', 'Muscat'),
+(173, 'Panama', '3410676', 'Panama City'),
+(174, 'Peru', '29907003', 'Lima'),
+(175, 'French Polynesia', '270485', 'Papeete'),
+(176, 'Papua New Guinea', '6064515', 'Port Moresby'),
+(177, 'Philippines', '99900177', 'Manila'),
+(178, 'Pakistan', '184404791', 'Islamabad'),
+(179, 'Poland', '38500000', 'Warsaw'),
+(180, 'Saint Pierre and Miquelon', '7012', 'Saint-Pierre'),
+(181, 'Pitcairn Islands', '46', 'Adamstown'),
+(182, 'Puerto Rico', '3916632', 'San Juan'),
+(183, 'Palestine', '3800000', ''),
+(184, 'Portugal', '10676000', 'Lisbon'),
+(185, 'Palau', '19907', 'Melekeok'),
+(186, 'Paraguay', '6375830', 'Asunción'),
+(187, 'Qatar', '840926', 'Doha'),
+(188, 'Réunion', '776948', 'Saint-Denis'),
+(189, 'Romania', '21959278', 'Bucharest'),
+(190, 'Serbia', '7344847', 'Belgrade'),
+(191, 'Russia', '140702000', 'Moscow'),
+(192, 'Rwanda', '11055976', 'Kigali'),
+(193, 'Saudi Arabia', '25731776', 'Riyadh'),
+(194, 'Solomon Islands', '559198', 'Honiara'),
+(195, 'Seychelles', '88340', 'Victoria'),
+(196, 'Sudan', '35000000', 'Khartoum'),
+(197, 'Sweden', '9828655', 'Stockholm'),
+(198, 'Singapore', '4701069', 'Singapore'),
+(199, 'Saint Helena', '7460', 'Jamestown'),
+(200, 'Slovenia', '2007000', 'Ljubljana'),
+(201, 'Svalbard and Jan Mayen', '2550', 'Longyearbyen'),
+(202, 'Slovakia', '5455000', 'Bratislava'),
+(203, 'Sierra Leone', '5245695', 'Freetown'),
+(204, 'San Marino', '31477', 'San Marino'),
+(205, 'Senegal', '12323252', 'Dakar'),
+(206, 'Somalia', '10112453', 'Mogadishu'),
+(207, 'Suriname', '492829', 'Paramaribo'),
+(208, 'South Sudan', '8260490', 'Juba'),
+(209, 'São Tomé and Príncipe', '175808', 'São Tomé'),
+(210, 'El Salvador', '6052064', 'San Salvador'),
+(211, 'Sint Maarten', '37429', 'Philipsburg'),
+(212, 'Syria', '22198110', 'Damascus'),
+(213, 'Swaziland', '1354051', 'Mbabane'),
+(214, 'Turks and Caicos Islands', '20556', 'Cockburn Town'),
+(215, 'Chad', '10543464', 'N\'Djamena'),
+(216, 'French Southern Territories', '140', 'Port-aux-Français'),
+(217, 'Togo', '6587239', 'Lomé'),
+(218, 'Thailand', '67089500', 'Bangkok'),
+(219, 'Tajikistan', '7487489', 'Dushanbe'),
+(220, 'Tokelau', '1466', ''),
+(221, 'East Timor', '1154625', 'Dili'),
+(222, 'Turkmenistan', '4940916', 'Ashgabat'),
+(223, 'Tunisia', '10589025', 'Tunis'),
+(224, 'Tonga', '122580', 'Nuku\'alofa'),
+(225, 'Turkey', '77804122', 'Ankara'),
+(226, 'Trinidad and Tobago', '1328019', 'Port of Spain'),
+(227, 'Tuvalu', '10472', 'Funafuti'),
+(228, 'Taiwan', '22894384', 'Taipei'),
+(229, 'Tanzania', '41892895', 'Dodoma'),
+(230, 'Ukraine', '45415596', 'Kiev'),
+(231, 'Uganda', '33398682', 'Kampala'),
+(232, 'U.S. Minor Outlying Islands', '0', ''),
+(233, 'United States', '310232863', 'Washington'),
+(234, 'Uruguay', '3477000', 'Montevideo'),
+(235, 'Uzbekistan', '27865738', 'Tashkent'),
+(236, 'Vatican City', '921', 'Vatican City'),
+(237, 'Saint Vincent and the Grenadines', '104217', 'Kingstown'),
+(238, 'Venezuela', '27223228', 'Caracas'),
+(239, 'British Virgin Islands', '21730', 'Road Town'),
+(240, 'U.S. Virgin Islands', '108708', 'Charlotte Amalie'),
+(241, 'Vietnam', '89571130', 'Hanoi'),
+(242, 'Vanuatu', '221552', 'Port Vila'),
+(243, 'Wallis and Futuna', '16025', 'Mata-Utu'),
+(244, 'Samoa', '192001', 'Apia'),
+(245, 'Kosovo', '1800000', 'Pristina'),
+(246, 'Yemen', '23495361', 'Sanaa'),
+(247, 'Mayotte', '159042', 'Mamoudzou'),
+(248, 'South Africa', '49000000', 'Pretoria'),
+(249, 'Zambia', '13460305', 'Lusaka'),
+(250, 'Zimbabwe', '13061000', 'Harare');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `countries`
+--
+ALTER TABLE `countries`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
