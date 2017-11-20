@@ -1,4 +1,4 @@
-# WebServiceConvertor
+# WebServiceConverter
 Restful Php Web services length converter, computer data unit converter, calculator, display capital of a country.
 
 Demo at: https://dabicata.000webhostapp.com/
